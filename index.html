@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Academia PC: aprende sobre el computador con actividades y modelos 3D interactivos."><title>Academia PC | Explora, aprende y juega</title>
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+<style>
+:root{--navy:#14213d;--blue:#2463eb;--cyan:#5eead4;--gold:#fbbf24;--ink:#172033;--muted:#65718a;--paper:#f5f7fc;--card:#fff;--line:#e1e7f0;--soft:#eaf1ff;--green:#16794a;--red:#b42318}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}button,input,select{font:inherit}button{cursor:pointer}.top{background:linear-gradient(120deg,#14213d,#1e40af 72%,#0f766e);color:#fff;padding:18px clamp(16px,4vw,54px) 14px}.brandline{display:flex;align-items:center;gap:12px}.brandicon{display:grid;place-items:center;width:48px;height:48px;border-radius:15px;background:#ffffff20;font-size:27px}.brandline h1{font-size:clamp(1.3rem,3vw,2rem);margin:0}.brandline p{margin:2px 0 0;color:#dbeafe}.topnote{margin:13px 0 0;max-width:900px;color:#eef5ff}.navwrap{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 4px 16px #1720330a}.nav{display:flex;gap:6px;overflow:auto;padding:9px clamp(10px,3vw,40px);max-width:1600px;margin:auto}.nav button{white-space:nowrap;border:0;border-radius:10px;padding:9px 12px;background:transparent;color:#44516b;font-weight:700}.nav button:hover{background:#eef3ff}.nav button.active{background:var(--navy);color:white}main{max-width:1500px;margin:auto;padding:22px clamp(12px,3vw,38px) 60px}.page{display:none;animation:fade .2s ease}.page.active{display:block}@keyframes fade{from{opacity:.4;transform:translateY(4px)}to{opacity:1;transform:none}}.eyebrow{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--blue)}h2{font-size:clamp(1.55rem,3vw,2.25rem);line-height:1.2;margin:5px 0 12px;color:var(--navy)}h3{margin:0 0 8px;color:var(--navy)}p{margin:8px 0}.muted{color:var(--muted)}.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:20px;align-items:center;background:linear-gradient(135deg,#fff,#eaf2ff);border:1px solid #d9e5ff;border-radius:24px;padding:clamp(20px,4vw,44px);overflow:hidden}.hero h2{font-size:clamp(2rem,5vw,3.5rem);letter-spacing:-.04em}.hero p{font-size:1.05rem;max-width:700px}.hero-art{min-height:240px;display:grid;place-items:center;font-size:clamp(5rem,13vw,10rem);position:relative}.orbit{position:absolute;width:230px;height:230px;border:2px dashed #93b4f8;border-radius:50%;animation:spin 30s linear infinite}.orbit:before,.orbit:after{content:'💾';position:absolute;font-size:2.5rem;background:white;border-radius:15px;padding:8px}.orbit:before{top:12px;left:20px}.orbit:after{bottom:18px;right:5px;content:'🧠'}@keyframes spin{to{transform:rotate(360deg)}}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.btn{border:0;border-radius:12px;padding:12px 17px;font-weight:800;background:var(--blue);color:white;box-shadow:0 5px 12px #2463eb26}.btn:hover{filter:brightness(.95);transform:translateY(-1px)}.btn.secondary{background:white;color:var(--navy);border:1px solid var(--line);box-shadow:none}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:20px}.info-card,.panel,.quiz-card,.part-card{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:18px;min-width:0}.info-card .big{font-size:2rem}.info-card p{color:var(--muted)}.steps{counter-reset:step;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px}.step{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}.step strong{display:block;color:var(--blue);font-size:1.15rem}.callout{background:#fff7d6;border:1px solid #f6d56d;border-radius:14px;padding:15px;margin-top:16px}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}.era{background:white;border:1px solid var(--line);border-radius:15px;padding:16px;border-top:5px solid var(--blue)}.era .year{font-weight:900;color:var(--blue)}.filterbar{display:flex;flex-wrap:wrap;gap:9px;margin:16px 0;align-items:center}.filterbar input,.filterbar select{border:1px solid #cfd8e6;border-radius:11px;padding:10px 12px;background:white;color:var(--ink)}.filterbar input{flex:1;min-width:180px}.component-layout{display:grid;grid-template-columns:minmax(280px,.82fr) minmax(0,1.18fr);gap:16px;align-items:start}.catalog,.viewer-panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:15px;min-width:0}.catalog-head{display:flex;justify-content:space-between;gap:8px;align-items:center}.part-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;max-height:65vh;overflow:auto;padding:2px}.part-card{display:flex;gap:9px;align-items:flex-start;text-align:left;padding:11px;border-radius:12px;box-shadow:none}.part-card .emoji{font-size:1.55rem}.part-card strong{display:block;line-height:1.25}.part-card small{display:block;color:var(--muted);margin-top:3px}.part-card[aria-pressed=true]{border:2px solid var(--blue);background:var(--soft);padding:10px}.viewer-panel{position:sticky;top:76px}.viewer-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}.viewer-heading h3{font-size:1.35rem}.pill{background:#edf2ff;color:#2349a5;border-radius:99px;padding:4px 9px;font-size:.78rem;font-weight:800;white-space:nowrap}.stage{height:min(48vh,470px);min-height:300px;margin-top:8px;border:1px solid #e9edf5;border-radius:14px;background:radial-gradient(ellipse at center,#fff,#edf3fc);overflow:hidden}model-viewer{width:100%;height:100%;display:block;--poster-color:transparent;background:transparent}#modelStatus{color:var(--muted);font-size:.9rem;min-height:1.4em;margin:7px 0}.model-info{border-top:1px solid var(--line);padding-top:11px;margin-top:8px}.model-info p{margin:5px 0}.model-help{font-size:.88rem;color:var(--muted)}.mini-action{border:1px solid var(--line);border-radius:10px;background:white;padding:7px 10px;color:var(--navy);font-weight:700}.sortie{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.category-chip{border:1px solid #cfd8e6;background:white;color:#43516a;border-radius:99px;padding:7px 11px;font-weight:700}.category-chip.active{background:var(--navy);color:white}.quiz-card{max-width:850px}.question{font-size:1.15rem;font-weight:800;margin:15px 0}.answers{display:grid;gap:9px}.answer{border:1px solid var(--line);border-radius:12px;padding:12px;text-align:left;background:white}.answer:hover{border-color:#8aaaf7;background:#f8faff}.answer.correct{border-color:#5cb98b;background:#e8fff2}.answer.wrong{border-color:#f1a19b;background:#fff0ef}.feedback{padding:12px;border-radius:12px;margin-top:12px;display:none}.feedback.show{display:block}.feedback.good{background:#e8fff2;color:#145b37}.feedback.bad{background:#fff0ef;color:#8e211b}.quiz-footer{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-top:15px}.progress{height:8px;background:#e7ecf5;border-radius:99px;overflow:hidden;margin:10px 0}.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),#14b8a6);transition:width .2s}.glossary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.term{background:white;border:1px solid var(--line);border-radius:12px;padding:13px}.term strong{color:var(--blue)}.safe-list{display:grid;gap:10px}.safe-item{display:flex;gap:12px;padding:13px;background:white;border:1px solid var(--line);border-radius:12px}.safe-item span{font-size:1.6rem}.footer{margin-top:26px;text-align:center;color:var(--muted);font-size:.88rem}.toast{position:fixed;bottom:16px;right:16px;background:var(--navy);color:white;padding:12px 16px;border-radius:12px;box-shadow:0 8px 30px #0002;display:none;z-index:20}.toast.show{display:block}
+@media(max-width:950px){.hero{grid-template-columns:1fr}.hero-art{min-height:170px}.grid{grid-template-columns:repeat(2,1fr)}.steps,.timeline{grid-template-columns:repeat(2,1fr)}.component-layout{grid-template-columns:1fr}.viewer-panel{position:static;grid-row:1}.catalog{grid-row:2}.part-grid{max-height:none;grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){main{padding:14px 11px 40px}.top{padding:15px}.brandicon{width:42px;height:42px}.nav{padding:7px}.nav button{padding:8px 10px}.grid,.two-col,.glossary{grid-template-columns:1fr}.steps,.timeline{grid-template-columns:1fr 1fr}.hero{padding:20px}.hero-art{min-height:145px}.orbit{width:165px;height:165px}.part-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.stage{height:330px;min-height:260px}.viewer-panel,.catalog{padding:11px}.quiz-footer{align-items:stretch;flex-direction:column}}
+</style>
+<style>
+:root{--navy:#203a34;--blue:#176c63;--cyan:#d7eee5;--gold:#e4b44f;--ink:#263733;--muted:#60716b;--paper:#f4f7f4;--card:#fff;--line:#d8e2dd;--soft:#e8f1ec;--green:#16794a;--red:#b42318}
+body{background:var(--paper);color:var(--ink);font-family:Verdana,"Segoe UI",sans-serif}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;letter-spacing:0}
+h2{font-size:1.85rem;color:var(--navy)}
+.top{background:#23443b;color:#fff;padding:16px clamp(16px,4vw,48px)}
+.topnote{color:#e1eee8}
+.brandicon{border-radius:8px;background:#ffffff1a}
+.navwrap{box-shadow:none}
+.nav button{border-radius:6px}
+.nav button:hover{background:#e8f1ec}
+.nav button.active{background:#176c63}
+main{max-width:1440px}
+.hero{grid-template-columns:1fr;background:#fff;border:1px solid var(--line);border-radius:8px;box-shadow:none}
+.hero h2{font-size:2.25rem}
+.hero-art,.orbit{display:none}
+.btn{border-radius:6px;background:#176c63;box-shadow:none}
+.btn.secondary{border-radius:6px}
+.info-card,.panel,.quiz-card,.part-card,.catalog,.viewer-panel,.era,.step,.term,.safe-item{border-radius:8px;box-shadow:none}
+.component-layout{display:flex;flex-direction:column;gap:14px}
+.viewer-panel{order:-1;position:static;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(250px,.85fr);grid-template-areas:"heading heading" "stage info" "status info" "help help";gap:10px 18px;align-items:start}
+.viewer-heading{grid-area:heading}
+.stage{grid-area:stage;height:clamp(300px,40vh,360px);min-height:0;margin:0;border:1px solid var(--line);border-radius:8px;background:#eef4f0}
+#modelStatus{grid-area:status;margin:0;color:var(--muted);font-size:.9rem}
+.model-info{grid-area:info;border-top:0;border-left:1px solid var(--line);padding:4px 0 4px 18px;margin:0;align-self:stretch}
+.model-help{grid-area:help;margin:0;padding-top:8px;border-top:1px solid var(--line)}
+.catalog{width:100%}
+.part-card{border-radius:6px;padding:12px}
+.part-card:hover{border-color:var(--blue);background:var(--soft)}
+.filterbar input,.filterbar select{border:1px solid var(--line);border-radius:6px;background:#fff}
+@media(max-width:800px){.viewer-panel{grid-template-columns:minmax(0,1fr);grid-template-areas:"heading" "stage" "status" "info" "help"}.stage{height:min(38vh,320px);min-height:280px}.model-info{border-left:0;border-top:1px solid var(--line);padding:12px 0 0}.part-grid{max-height:none}.hero h2{font-size:2rem}}
+#page-componentes.active{display:flex;flex-direction:column}
+#page-componentes>.component-layout{order:2}
+#page-componentes>.filterbar{order:3}
+#page-componentes>.callout{order:4}
+@media(max-width:600px){.topnote{display:none}#page-componentes>p{font-size:.92rem;line-height:1.4;margin:5px 0 9px}}
+.navwrap{position:fixed;inset:0 auto 0 0;width:250px;z-index:30;background:#fff;border-right:1px solid var(--line);box-shadow:4px 0 18px #1720330a;overflow-y:auto}.nav{display:flex;flex-direction:column;gap:4px;padding:20px 14px;max-width:none;margin:0}.nav-group{display:flex;flex-direction:column;align-items:stretch;gap:4px;margin-bottom:18px}.nav-group>button{display:block;min-height:42px;line-height:1.35}.nav-group>span{padding:8px 10px;color:var(--muted);font-size:.76rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.nav button{width:100%;text-align:left;white-space:normal;padding:10px 12px}.nav-toggle{display:none}body{padding-left:250px}.top{padding-left:clamp(16px,4vw,54px)}@media(max-width:800px){body{padding-left:0}.navwrap{position:fixed;inset:0 0 auto;width:auto;border-right:0;border-bottom:1px solid var(--line);overflow:visible}.nav-toggle{display:block;width:100%;border:0;background:#fff;padding:12px 16px;text-align:left;font-weight:800;color:var(--navy)}.nav{display:none;max-height:70vh;overflow-y:auto;padding:4px 12px 12px}.navwrap.open .nav{display:flex}main{padding-top:64px}}:root{--navy:#15324b;--blue:#1479a8;--cyan:#d8f0f5;--gold:#e2b85d;--ink:#213746;--muted:#5f7482;--paper:#f2f8fb;--card:#fff;--line:#d6e5ec;--soft:#e4f3f8}body{background:var(--paper);color:var(--ink)}.top{background:linear-gradient(120deg,#15324b,#176c9b 72%,#138b91)}.topnote{color:#e5f5fb}.navwrap{background:#f8fcfe;border-color:#d2e5ee}.nav button.active{background:#176c9b}.nav button:hover{background:#e4f3f8}.nav-style-picker{background:#fff}.navwrap[data-style="oceano"]{background:#f0f8fc}.hero{background:linear-gradient(135deg,#fff,#e8f5fa);border-color:#cfe6f0}.eyebrow{color:#1479a8}.btn{background:#1479a8}.timeline.interactive-timeline{display:block;margin:22px 0}.timeline-track{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.timeline-track:before{content:"";position:absolute;left:9%;right:9%;top:22px;height:3px;background:#b8dce9}.timeline-point{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:8px;border:0;background:transparent;color:var(--ink);padding:0 8px 12px;text-align:center}.timeline-point:before{content:"";width:18px;height:18px;border:4px solid #fff;border-radius:50%;background:#7daec2;box-shadow:0 0 0 2px #b8dce9}.timeline-point[aria-selected="true"]:before{background:var(--blue);box-shadow:0 0 0 4px #c9eaf5}.timeline-year{font-weight:800;color:var(--blue)}.timeline-label{font-size:.9rem;font-weight:700}.timeline-point:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:8px}.timeline-details{max-width:900px;margin:12px auto 0}.timeline-detail{padding:20px 22px;background:#fff;border:1px solid var(--line);border-left:5px solid var(--blue);border-radius:10px;animation:fade .2s ease}.timeline-detail h3{margin:0 0 8px}.timeline-detail p{margin:0;color:var(--muted)}.timeline-detail[hidden]{display:none}@media(max-width:650px){.timeline-track{grid-template-columns:1fr;gap:2px}.timeline-track:before{left:17px;right:auto;top:16px;bottom:18px;width:3px;height:auto}.timeline-point{flex-direction:row;justify-content:flex-start;align-items:center;text-align:left;gap:12px;padding:7px 6px}.timeline-point:before{width:16px;height:16px;flex:none}.timeline-year{min-width:88px}.timeline-label{font-size:.92rem}}:root{--navy:#173b70;--blue:#2563eb;--cyan:#dff7ff;--gold:#f5a524;--ink:#20334f;--muted:#526681;--paper:#f4f8ff;--card:#fff;--line:#d8e4f4;--soft:#e8f1ff;--green:#16835d;--red:#b42318}html{scroll-behavior:smooth}body{font-family:"Trebuchet MS",Verdana,"Segoe UI",sans-serif;line-height:1.6;background:radial-gradient(circle at 8% 14%,#fff1c8 0 5px,transparent 6px),radial-gradient(circle at 94% 32%,#dff7ff 0 7px,transparent 8px),var(--paper);color:var(--ink)}.top{background:linear-gradient(120deg,#1d4ed8 0%,#1479a8 58%,#0f8b8d 100%);padding-top:22px;padding-bottom:22px;border-bottom:5px solid #f8c34a}.brandicon{width:56px;height:56px;border-radius:18px;background:#ffffff2b;box-shadow:0 5px 0 #123a7850}.brandline h1{font-family:"Trebuchet MS",Verdana,sans-serif;font-weight:900;letter-spacing:.01em}.brandline p{font-size:1.05rem;font-weight:700;color:#eaf7ff}.topnote{max-width:800px;font-size:1.02rem}body{--card-shadow:0 8px 22px #173b7010}.navwrap{background:#fff;border-right:2px solid #dce9f7;box-shadow:5px 0 22px #173b7010}.nav{gap:8px;padding:22px 14px}.nav-group{margin-bottom:14px}.nav-group>span{color:#2563eb;font-size:.8rem;letter-spacing:.08em}.nav button{border-radius:12px;font-weight:800;transition:background .16s ease,transform .16s ease,box-shadow .16s ease}.nav button:hover{background:#eaf3ff;transform:translateX(2px)}.nav button.active{background:linear-gradient(110deg,#2563eb,#1479a8);box-shadow:0 4px 10px #2563eb30}.nav-toggle{color:#173b70!important;font-size:1.05rem}main{padding-top:30px}.eyebrow{display:inline-block;border-radius:99px;background:#e3f5ff;color:#125d91;padding:4px 11px;font-size:.76rem;letter-spacing:.08em}h2{color:#173b70;font-family:"Trebuchet MS",Verdana,sans-serif;font-weight:900;letter-spacing:-.02em}h3{color:#214b83;font-family:"Trebuchet MS",Verdana,sans-serif;font-weight:850}.hero{background:linear-gradient(135deg,#fff 0%,#eef6ff 68%,#e5f9f7 100%);border:2px solid #d8e8fa;border-radius:26px;box-shadow:0 12px 28px #173b700c}.hero h2{color:#173b70}.info-card,.panel,.quiz-card,.part-card,.catalog,.viewer-panel,.era,.step,.term,.safe-item{border-radius:18px;border-color:#dbe7f5;box-shadow:var(--card-shadow)}.info-card{transition:transform .18s ease,box-shadow .18s ease}.info-card:hover{transform:translateY(-3px);box-shadow:0 12px 24px #173b7018}.info-card .big{display:grid;place-items:center;width:54px;height:54px;border-radius:17px;background:#eaf4ff}.info-card:nth-child(3n+2) .big{background:#e4f8f2}.info-card:nth-child(3n) .big{background:#fff4d9}.step{border-top:4px solid #60a5fa;background:linear-gradient(180deg,#f4f9ff,#fff 42%)}.step:nth-child(2){border-top-color:#2dd4bf}.step:nth-child(3){border-top-color:#fbbf24}.step:nth-child(4){border-top-color:#a78bfa}.callout{background:#fff6d9;border:2px solid #f6d578;border-radius:17px;color:#5b4512}.btn{border-radius:14px;background:linear-gradient(110deg,#2563eb,#1479a8);box-shadow:0 5px 0 #174ca5;font-weight:900;transition:transform .14s ease,box-shadow .14s ease}.btn:hover{transform:translateY(-2px);box-shadow:0 7px 0 #174ca5}.btn:active{transform:translateY(1px);box-shadow:0 2px 0 #174ca5}.btn.secondary{border-radius:14px;color:#174b79;border:2px solid #d6e7f7;background:#fff;box-shadow:none}.category-chip,.mini-action{border-radius:12px}.category-chip.active{background:#2563eb}.answer{border-radius:15px;border-width:2px;font-weight:700}.answer:hover{border-color:#60a5fa;background:#eff7ff}.answer.correct{border-color:#47b881;background:#e8fff3}.answer.wrong{border-color:#ef8b82;background:#fff0ee}.quiz-card{border-top:5px solid #3b82f6}.progress{height:11px;background:#e4ebf5}.progress span{background:linear-gradient(90deg,#2563eb,#14b8a6,#f5b942)}.timeline-detail{border-radius:16px;box-shadow:0 8px 20px #173b7010}.timeline-point[aria-selected="true"] .timeline-year{color:#174ca5}.stage{border:2px solid #d8e8f4;border-radius:18px;background:radial-gradient(ellipse at center,#fff,#e8f5fb)}.catalog,.viewer-panel{border-width:2px}.footer{padding:15px}.toast{border-radius:14px}.page.active{animation:fade .22s ease}@media(max-width:800px){.top{padding-top:18px;padding-bottom:18px}.navwrap{box-shadow:0 5px 16px #173b7015}.nav-toggle{background:#f5f9ff;border-radius:0 0 14px 14px}.nav button:hover{transform:none}main{padding-top:76px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}:root{--navy:#163b77;--blue:#315eea;--cyan:#c9f5ff;--gold:#ffca3a;--ink:#24334f;--muted:#52627c;--paper:#f7f8ff;--card:#fff;--line:#dce4f2;--soft:#eaf0ff;--green:#16835d;--red:#b42318}.top{background:linear-gradient(120deg,#3264f2 0%,#17a7bb 55%,#7b61d1 100%);border-bottom:7px solid #ffd34f}.brandicon{background:#fff3;border:2px solid #ffffff70;box-shadow:0 5px 0 #153b7750}.navwrap{background:#fffdf8;border-right:3px solid #d8ebfa}.nav-group>span{color:#7352bd}.nav button.active{background:linear-gradient(110deg,#315eea,#177eaf);box-shadow:0 4px 0 #2348bd}.nav button:hover{background:#e9f6ff}.eyebrow{background:#fff1bb;color:#6a4a00;border:1px solid #f7d66c}h2{color:#183c78;font-size:clamp(1.8rem,3.2vw,2.45rem)}h3{color:#3053a0}.hero{background:linear-gradient(135deg,#fff 0%,#edf5ff 54%,#e5fcf5 100%);border:3px solid #d4e7fa;box-shadow:0 12px 0 #dceafb;border-radius:28px}.info-card,.step,.term,.safe-item,.quiz-card,.catalog,.viewer-panel{border:2px solid #dce8f6;border-radius:22px;box-shadow:0 7px 0 #e7edf7}.info-card:nth-child(3n+1){border-top:6px solid #ff9f68}.info-card:nth-child(3n+2){border-top:6px solid #42c6b5}.info-card:nth-child(3n){border-top:6px solid #8c75e8}.info-card .big{border-radius:18px;background:#fff0e6}.info-card:nth-child(3n+2) .big{background:#e3fbf5}.info-card:nth-child(3n) .big{background:#f0ebff}.step{border-top:6px solid #ffbd45;background:#fffef9}.step:nth-child(2){border-top-color:#3fc8bd}.step:nth-child(3){border-top-color:#8c75e8}.step:nth-child(4){border-top-color:#ff8c9b}.callout{background:#fff5c8;border:2px solid #f5d45d;border-radius:20px;box-shadow:0 5px 0 #f8e7a1;color:#564313}.btn{background:linear-gradient(110deg,#315eea,#7153cf);border-radius:16px;box-shadow:0 5px 0 #2644a6}.btn:hover{box-shadow:0 7px 0 #2644a6}.btn.secondary{background:#e6fbf5;border:2px solid #a7e4d3;color:#145e53}.answer{border:2px solid #dce4f2;border-radius:17px}.answer:hover{border-color:#63a5f4;background:#eef8ff}.answer.correct{background:#e7fff0;border-color:#46bd7b}.answer.wrong{background:#fff0ec;border-color:#ef8e7b}.quiz-card{border-top:7px solid #ffca3a}.progress span{background:linear-gradient(90deg,#315eea,#19b6a5,#ffbf36,#f77b91)}.timeline-detail{border-left-color:#ff9f43;border-radius:20px;box-shadow:0 7px 0 #e7edf7}.timeline-point[aria-selected="true"]:before{background:#ff8b52;box-shadow:0 0 0 4px #ffe2c8}.timeline-point[aria-selected="true"] .timeline-year{color:#8a4d12}.stage{border:3px solid #d5e9f1;border-radius:20px}.part-card[aria-pressed=true]{border-color:#315eea;background:#eef3ff}.footer{color:#53627b}@media(prefers-reduced-motion:no-preference){.info-card,.btn,.nav button{transition:transform .16s ease,box-shadow .16s ease,background .16s ease}.info-card:hover{transform:translateY(-3px)}.nav button:hover{transform:translateX(2px)}}.nav>.nav-home{margin:0 0 16px;border:2px solid #f4d36b;border-bottom-width:4px;background:#fff7d6;color:#604912;font-weight:900}.nav>.nav-home.active{background:#ffdf76;color:#4e3b0e;box-shadow:0 4px 0 #e1ba48}.nav>.nav-home:hover{background:#ffedaf}</style></head><body>
+<header class="top"><div class="brandline"><div class="brandicon">&#128421;&#65039;</div><div><h1>Academia PC</h1><p>Explora el computador. Aprende jugando.</p></div></div><p class="topnote">Un espacio interactivo para descubrir c&oacute;mo funciona el computador, conocer sus piezas en 3D y practicar lo aprendido a tu propio ritmo.</p></header>
+<div class="navwrap">
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mainNav">&#9776; Men&uacute;</button>
+  <nav class="nav" id="mainNav" aria-label="Navegación principal">
+    <button class="nav-home active" data-page="inicio">&#127968; &iquest;De qu&eacute; trata?</button>
+    <div class="nav-group">
+      <span>Aprende</span>
+      <button data-page="historia">&#128368;&#65039; Historia</button>
+      <button data-page="entrada">&#127918; Entrada y salida</button>
+      <button data-page="hardware">&#9881;&#65039; Hardware y software</button>
+      <button data-page="funciona">&#128260; &iquest;C&oacute;mo funciona?</button>
+    </div>
+    <div class="nav-group">
+      <span>Explora</span>
+      <button data-page="componentes">&#129513; Componentes 3D</button>
+      <button data-page="seguridad">&#128737;&#65039; Seguridad digital</button>
+      <button data-page="glosario">&#128218; Glosario</button>
+    </div>
+    <div class="nav-group">
+      <span>Practica</span>
+      <button data-page="practica">&#127919; Practicar</button>
+      <button data-page="simulacro">&#127941; Simulacro</button>
+    </div>  </nav>
+</div>
+<main>
+<section class="page active" id="page-inicio"><div class="hero"><div><div class="eyebrow">¡Bienvenido, explorador digital!</div><h2>¿Alguna vez te has preguntado qué hay dentro de un computador?</h2><p>En <strong>Academia PC</strong> vas a descubrir las piezas que hacen posible jugar, escribir, dibujar, buscar información y comunicarte. Podrás observar modelos tridimensionales, aprender con ejemplos sencillos y comprobar cuánto sabes mediante retos cortos.</p><p>Esta página está pensada para estudiantes de básica primaria y secundaria que quieren aprender Tecnología e Informática paso a paso.</p></div><div class="hero-art" aria-hidden="true">🖥️<div class="orbit"></div></div></div>
+<div class="grid"><article class="info-card"><div class="big">🔎</div><h3>Explora en 3D</h3><p>Selecciona una pieza, gírala y acércala para observar sus detalles.</p></article><article class="info-card"><div class="big">🧠</div><h3>Aprende a tu ritmo</h3><p>Explicaciones breves y ejemplos para relacionar cada pieza con su función.</p></article><article class="info-card"><div class="big">🎯</div><h3>Practica y mejora</h3><p>Responde preguntas y recibe retroalimentación para entender tus errores.</p></article></div>
+<h2 style="margin-top:28px">Tu ruta de aprendizaje</h2><div class="steps"><div class="step"><strong>01 · Descubre</strong>Conoce la historia y las partes del computador.</div><div class="step"><strong>02 · Observa</strong>Explora los modelos 3D de los componentes.</div><div class="step"><strong>03 · Comprende</strong>Relaciona las piezas con sus funciones.</div><div class="step"><strong>04 · Demuestra</strong>Practica y resuelve el simulacro.</div></div><div class="callout"><strong>💡 Consejo:</strong> no intentes memorizarlo todo de una vez. Explora una pieza, lee para qué sirve y después intenta explicarlo con tus propias palabras.</div></section>
+<section class="page" id="page-historia"><div class="eyebrow">Módulo 1</div><h2>La historia del computador</h2><p class="muted">Los computadores han cambiado mucho: de máquinas enormes que ocupaban habitaciones a dispositivos pequeños y potentes que usamos todos los días.</p><div class="timeline interactive-timeline">
+  <div class="timeline-track" role="tablist" aria-label="Etapas de la historia del computador">
+    <button class="timeline-point" id="era-tab-1" type="button" role="tab" aria-selected="true" aria-controls="era-panel-1" tabindex="0" data-era-tab="1"><span class="timeline-year">Antes</span><span class="timeline-label">Herramientas de c&aacute;lculo</span></button>
+    <button class="timeline-point" id="era-tab-2" type="button" role="tab" aria-selected="false" aria-controls="era-panel-2" tabindex="-1" data-era-tab="2"><span class="timeline-year">1940–1950</span><span class="timeline-label">Grandes m&aacute;quinas</span></button>
+    <button class="timeline-point" id="era-tab-3" type="button" role="tab" aria-selected="false" aria-controls="era-panel-3" tabindex="-1" data-era-tab="3"><span class="timeline-year">1970–1980</span><span class="timeline-label">Computadores personales</span></button>
+    <button class="timeline-point" id="era-tab-4" type="button" role="tab" aria-selected="false" aria-controls="era-panel-4" tabindex="-1" data-era-tab="4"><span class="timeline-year">Hoy</span><span class="timeline-label">Un mundo conectado</span></button>
+  </div>
+  <div class="timeline-details">
+    <article class="timeline-detail" id="era-panel-1" role="tabpanel" aria-labelledby="era-tab-1" data-era-panel="1"><h3>&#129518; Herramientas de c&aacute;lculo</h3><p>El &aacute;baco y otras herramientas ayudaban a realizar operaciones matem&aacute;ticas.</p></article>
+    <article class="timeline-detail" id="era-panel-2" role="tabpanel" aria-labelledby="era-tab-2" data-era-panel="2" hidden><h3>&#127970; Grandes m&aacute;quinas</h3><p>Los primeros computadores electr&oacute;nicos eran enormes, costosos y se usaban para tareas especializadas.</p></article>
+    <article class="timeline-detail" id="era-panel-3" role="tabpanel" aria-labelledby="era-tab-3" data-era-panel="3" hidden><h3>&#127969; Computadores personales</h3><p>Los avances en microprocesadores ayudaron a que los computadores llegaran a hogares y escuelas.</p></article>
+    <article class="timeline-detail" id="era-panel-4" role="tabpanel" aria-labelledby="era-tab-4" data-era-panel="4" hidden><h3>&#127760; Un mundo conectado</h3><p>Computadores port&aacute;tiles, tel&eacute;fonos y otros dispositivos permiten crear, aprender y comunicarnos.</p></article>
+  </div>
+</div><div class="callout"><strong>Piensa:</strong> ¿qué tarea puedes hacer hoy en un computador que sería difícil de realizar con una máquina de hace muchas décadas?</div></section>
+<section class="page" id="page-componentes"><div class="eyebrow">Módulo 2 · Laboratorio interactivo</div><h2>Explora los componentes en 3D</h2><p>Elige una tarjeta para cargar su modelo. Arrastra para girar, utiliza la rueda del ratón o el gesto de pellizcar para acercar y alejar. Lee la explicación y luego intenta decir la función sin mirar.</p><div class="filterbar"><input id="componentSearch" type="search" placeholder="🔎 Buscar un componente…" aria-label="Buscar componente"><select id="componentFilter" aria-label="Filtrar componentes"><option value="todos">Todos los componentes</option><option value="Interno">Componentes internos</option><option value="Entrada">Dispositivos de entrada</option><option value="Salida">Dispositivos de salida</option><option value="Almacenamiento externo">Almacenamiento externo</option></select><span id="componentCount" class="muted" aria-live="polite"></span></div><div class="component-layout"><section class="catalog"><div class="catalog-head"><h3>Elige una pieza</h3><span class="pill">16 modelos</span></div><div class="part-grid" id="partGrid"></div></section><section class="viewer-panel"><div class="viewer-heading"><div><div class="eyebrow">Visor 3D</div><h3 id="modelTitle">Placa base</h3></div><span class="pill" id="modelType">Interno</span></div><div class="stage"><model-viewer id="modelViewer" alt="Modelo 3D del componente" camera-controls auto-rotate auto-rotate-delay="1200" rotation-per-second="16deg" shadow-intensity="0.8" exposure="1" environment-image="neutral" loading="eager" interaction-prompt="auto" touch-action="pan-y" autoplay></model-viewer></div><p id="modelStatus" role="status">Preparando modelo 3D…</p><div class="model-info"><strong>🧠 ¿Para qué sirve?</strong><p id="modelDescription"></p><p><strong>En palabras sencillas:</strong> <span id="modelFun"></span></p><div class="sortie"><button class="mini-action" id="toggleRotate">⏸️ Pausar giro</button><button class="mini-action" id="resetView">↻ Reiniciar vista</button></div></div><p class="model-help">🖱️ Arrastra para girar · rueda del ratón para zoom · en pantalla táctil, usa un dedo para girar y dos para acercar/alejar.</p></section></div><div class="callout"><strong>Reto de explorador:</strong> escoge una pieza y responde: ¿es interna o externa?, ¿qué función cumple?, ¿qué ocurriría si no estuviera?</div></section>
+<section class="page" id="page-entrada"><div class="eyebrow">Módulo 3</div><h2>Dispositivos de entrada y salida</h2><p>Los dispositivos permiten que el computador reciba información y nos muestre los resultados.</p><div class="two-col"><article class="info-card"><div class="big">⬅️</div><h3>Entrada: la información entra</h3><p>Sirven para enviar datos u órdenes al computador.</p><ul><li>⌨️ Teclado: letras y números.</li><li>🖱️ Mouse: movimientos y clics.</li><li>🎙️ Micrófono: voz y sonidos.</li><li>📷 Cámara web: imagen y vídeo.</li></ul></article><article class="info-card"><div class="big">➡️</div><h3>Salida: la información sale</h3><p>Presentan al usuario la información procesada.</p><ul><li>🖥️ Monitor: imágenes y texto.</li><li>🔊 Parlantes: sonido.</li><li>🖨️ Impresora: documentos en papel.</li></ul></article></div><div class="callout"><strong>¡Ojo!</strong> Algunos dispositivos, como una pantalla táctil, pueden servir tanto para mostrar información como para recibir toques del usuario.</div></section>
+<section class="page" id="page-hardware"><div class="eyebrow">Módulo 4</div><h2>Hardware y software</h2><div class="two-col"><article class="info-card"><div class="big">🧩</div><h3>Hardware</h3><p>Son las partes físicas que podemos tocar: monitor, teclado, placa base, memoria RAM, mouse y más.</p><p><strong>Pregunta clave:</strong> ¿puedo tocarlo físicamente?</p></article><article class="info-card"><div class="big">💿</div><h3>Software</h3><p>Son los programas e instrucciones que indican al computador qué hacer: sistema operativo, navegador, juegos y aplicaciones.</p><p><strong>Pregunta clave:</strong> ¿es un programa o conjunto de instrucciones?</p></article></div><h3 style="margin-top:22px">¿Cómo trabajan juntos?</h3><p>El hardware aporta las partes físicas; el software da instrucciones. Por ejemplo, al abrir un juego, el procesador ejecuta instrucciones, la memoria RAM mantiene datos en uso y la tarjeta gráfica ayuda a dibujar las imágenes.</p><div class="callout">🧠 <strong>Recuerda:</strong> sin hardware no hay piezas físicas que ejecuten las tareas; sin software, el computador no tendría las instrucciones habituales para realizar actividades.</div></section>
+<section class="page" id="page-funciona"><div class="eyebrow">Módulo 5</div><h2>¿Cómo funciona un computador?</h2><p>Podemos resumir muchas tareas del computador en cuatro pasos. No todos los procesos son idénticos, pero este esquema ayuda a comprender la idea general.</p><div class="steps"><div class="step"><strong>1. Entrada</strong>Escribes con el teclado o haces clic con el mouse.</div><div class="step"><strong>2. Procesamiento</strong>El procesador ejecuta instrucciones y trabaja con datos.</div><div class="step"><strong>3. Memoria</strong>La RAM mantiene temporalmente los datos que se están usando.</div><div class="step"><strong>4. Salida</strong>El monitor muestra el resultado y los parlantes pueden reproducir sonido.</div></div><div class="callout"><strong>Ejemplo:</strong> al escribir una oración, el teclado envía las pulsaciones; el sistema procesa la entrada y el monitor muestra las letras. Al guardar el archivo, se utiliza una unidad de almacenamiento.</div></section>
+<section class="page" id="page-seguridad"><div class="eyebrow">Módulo 6</div><h2>Seguridad digital: cuídate mientras aprendes</h2><p>Usar la tecnología también significa cuidar nuestra información, nuestros dispositivos y a las personas con quienes nos comunicamos.</p><div class="safe-list"><div class="safe-item"><span>🔐</span><div><h3>Cuida tus contraseñas</h3><p>No las compartas con compañeros ni las publiques. Usa contraseñas difíciles de adivinar y sigue las indicaciones de tu familia o docente.</p></div></div><div class="safe-item"><span>🕵️</span><div><h3>Protege tus datos personales</h3><p>No publiques tu dirección, teléfono, ubicación exacta ni datos privados en sitios o juegos sin autorización.</p></div></div><div class="safe-item"><span>🚦</span><div><h3>Piensa antes de hacer clic</h3><p>No abras enlaces, archivos ni ventanas sospechosas. Si algo parece extraño, consulta a un adulto de confianza.</p></div></div><div class="safe-item"><span>🤝</span><div><h3>Trata a los demás con respeto</h3><p>No compartas fotos o mensajes de otras personas sin permiso. Si ves acoso o algo que te incomoda, pide ayuda.</p></div></div><div class="safe-item"><span>🧹</span><div><h3>Cuida el equipo</h3><p>Mantén líquidos lejos del computador, usa los cables con cuidado y apaga el equipo siguiendo las instrucciones.</p></div></div></div></section>
+<section class="page" id="page-glosario"><div class="eyebrow">Módulo 7</div><h2>Glosario tecnológico</h2><p>Palabras útiles para entender el computador.</p><div class="glossary"><div class="term"><strong>CPU / Procesador</strong><br>Componente que ejecuta instrucciones y realiza operaciones.</div><div class="term"><strong>RAM</strong><br>Memoria temporal para datos y programas en uso.</div><div class="term"><strong>Almacenamiento</strong><br>Espacio donde se conservan archivos y programas.</div><div class="term"><strong>Placa base</strong><br>Tarjeta que conecta muchos de los componentes internos.</div><div class="term"><strong>Periférico</strong><br>Dispositivo que permite introducir o recibir información.</div><div class="term"><strong>Hardware</strong><br>Partes físicas de un sistema informático.</div><div class="term"><strong>Software</strong><br>Programas e instrucciones que utiliza el computador.</div><div class="term"><strong>GPU</strong><br>Procesador especializado en tareas gráficas.</div><div class="term"><strong>USB</strong><br>Estándar usado para conectar dispositivos y transferir datos.</div><div class="term"><strong>Sistema operativo</strong><br>Software principal que administra recursos y permite usar aplicaciones.</div><div class="term"><strong>Red</strong><br>Conjunto de dispositivos que pueden comunicarse entre sí.</div><div class="term"><strong>Modelo 3D</strong><br>Representación digital tridimensional que podemos observar desde distintos ángulos.</div></div></section>
+<section class="page" id="page-practica"><div class="eyebrow">Zona de práctica</div><h2>Aprende con preguntas cortas</h2><p>Selecciona una respuesta. Antes de continuar, revisa la explicación para entender por qué es correcta.</p><div class="quiz-card"><div class="muted" id="practiceCount">Pregunta 1 de 8</div><div class="progress"><span id="practiceProgress"></span></div><div class="question" id="practiceQuestion"></div><div class="answers" id="practiceAnswers"></div><div class="feedback" id="practiceFeedback" aria-live="polite"></div><div class="quiz-footer"><span id="practiceScore" class="muted">Aciertos: 0</span><button class="btn" id="practiceNext" disabled>Siguiente pregunta →</button></div></div></section>
+<section class="page" id="page-simulacro"><div class="eyebrow">Desafío final</div><h2>Simulacro de conocimientos</h2><p>Responde las preguntas sin prisa. Al terminar, verás un resultado para saber qué temas conviene repasar. Este resultado solo vive en esta sesión; todavía no se guarda en una cuenta.</p><div class="quiz-card"><div class="muted" id="examCount">Pregunta 1 de 10</div><div class="progress"><span id="examProgress"></span></div><div class="question" id="examQuestion"></div><div class="answers" id="examAnswers"></div><div class="feedback" id="examFeedback" aria-live="polite"></div><div class="quiz-footer"><span id="examScore" class="muted">Aciertos: 0</span><button class="btn" id="examNext" disabled>Siguiente →</button></div><div id="examResult"></div></div></section>
+<div class="footer">Academia PC · Prototipo educativo interactivo · Sin registro de estudiantes por ahora.</div></main><div class="toast" id="toast" role="status"></div>
+<script>
+const COMPONENTS=[{"key":"motherboard","name":"Placa base","emoji":"🧩","type":"Interno","description":"Es la gran tarjeta que conecta el procesador, la memoria, el almacenamiento y otros componentes.","fun":"Conecta las piezas para que puedan comunicarse."},{"key":"cpu3d","name":"Procesador (CPU)","emoji":"🧠","type":"Interno","description":"Ejecuta instrucciones y realiza millones de operaciones para que los programas funcionen.","fun":"Es como el cerebro del computador."},{"key":"ram","name":"Memoria RAM","emoji":"⚡","type":"Interno","description":"Guarda temporalmente los datos que el computador está usando en ese momento. Al apagarlo, su contenido se pierde.","fun":"Ayuda a trabajar con programas abiertos."},{"key":"disco","name":"Unidad de almacenamiento","emoji":"💾","type":"Interno","description":"Conserva documentos, fotografías, programas y otros archivos incluso cuando apagas el computador.","fun":"Guarda la información a largo plazo."},{"key":"m2ssd","name":"SSD M.2","emoji":"🚀","type":"Interno","description":"Es una unidad compacta de almacenamiento que se instala directamente en una ranura compatible de la placa base.","fun":"Guarda archivos y puede ayudar a iniciar el sistema con rapidez."},{"key":"fuente","name":"Fuente de poder","emoji":"🔌","type":"Interno","description":"Convierte la electricidad que recibe y distribuye la energía necesaria para los componentes internos.","fun":"Reparte la energía eléctrica."},{"key":"torre","name":"Gabinete o torre","emoji":"🖥️","type":"Interno","description":"Es la estructura que protege y organiza las piezas internas del computador de escritorio.","fun":"Protege y organiza los componentes."},{"key":"cdDrive","name":"Lector de CD/DVD","emoji":"💿","type":"Interno","description":"Lee información guardada en discos ópticos compatibles. Es menos común en computadores actuales.","fun":"Lee discos ópticos."},{"key":"monitor","name":"Monitor","emoji":"🖥️","type":"Salida","description":"Muestra textos, imágenes, vídeos y la interfaz de los programas.","fun":"Permite ver la información."},{"key":"teclado","name":"Teclado","emoji":"⌨️","type":"Entrada","description":"Permite escribir letras, números y comandos para comunicarnos con el computador.","fun":"Introduce texto y órdenes."},{"key":"mouse","name":"Mouse o ratón","emoji":"🖱️","type":"Entrada","description":"Mueve el puntero y permite seleccionar, arrastrar y abrir elementos en la pantalla.","fun":"Controla el puntero."},{"key":"speakers3d","name":"Parlantes","emoji":"🔊","type":"Salida","description":"Reproducen sonidos, voces, alertas y música.","fun":"Permiten escuchar el audio."},{"key":"microphone3d","name":"Micrófono","emoji":"🎙️","type":"Entrada","description":"Captura la voz y otros sonidos para grabarlos, transmitirlos o usarlos en una llamada.","fun":"Introduce sonido al computador."},{"key":"webcam3d","name":"Cámara web","emoji":"📷","type":"Entrada","description":"Captura imágenes y vídeo, por ejemplo, durante una videollamada o una grabación.","fun":"Introduce imágenes y vídeo."},{"key":"printer3d","name":"Impresora","emoji":"🖨️","type":"Salida","description":"Produce copias físicas de documentos, dibujos y fotografías.","fun":"Lleva información digital al papel."},{"key":"usbDrive","name":"Memoria USB","emoji":"🔑","type":"Almacenamiento externo","description":"Permite guardar y transportar archivos entre dispositivos compatibles.","fun":"Lleva archivos de un lugar a otro."}];
+const MODELS={"motherboard":"models/placa_base.glb","cpu3d":"models/procesador_cpu_alternativo.glb","ram":"models/memoria_ram.glb","disco":"models/unidad_almacenamiento.glb","m2ssd":"models/ssd_m2.glb","fuente":"models/fuente_poder.glb","torre":"models/gabinete_torre.glb","cdDrive":"models/lector_cd_dvd.glb","monitor":"models/monitor.glb","teclado":"models/teclado.glb","mouse":"models/mouse.glb","speakers3d":"models/parlantes.glb","microphone3d":"models/microfono.glb","webcam3d":"models/camara_web.glb","printer3d":"models/impresora.glb","usbDrive":"models/memoria_usb.glb"};
+const navButtons=[...document.querySelectorAll('[data-page]')];
+function showPage(name){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+name));navButtons.forEach(b=>b.classList.toggle('active',b.dataset.page===name));if(name==='componentes'&&selectedKey){const c=COMPONENTS.find(x=>x.key===selectedKey);if(c)document.getElementById('modelViewer').requestUpdate?.();}window.scrollTo({top:0,behavior:'smooth'});}
+navButtons.forEach(b=>b.addEventListener('click',()=>{showPage(b.dataset.page);closeNav();}));const navWrap=document.querySelector('.navwrap'),navToggle=document.querySelector('.nav-toggle');function closeNav(){navWrap.classList.remove('open');navToggle.setAttribute('aria-expanded','false');}navToggle.addEventListener('click',()=>{const open=navWrap.classList.toggle('open');navToggle.setAttribute('aria-expanded',String(open));});
+const eraTabs=[...document.querySelectorAll('[data-era-tab]')],eraPanels=[...document.querySelectorAll('[data-era-panel]')];function activateEra(tab){eraTabs.forEach(item=>{const selected=item===tab;item.setAttribute('aria-selected',String(selected));item.tabIndex=selected?0:-1;});eraPanels.forEach(panel=>{panel.hidden=panel.dataset.eraPanel!==tab.dataset.eraTab;});}eraTabs.forEach((tab,index)=>{tab.addEventListener('click',()=>activateEra(tab));tab.addEventListener('keydown',event=>{let next=index;if(event.key==='ArrowRight')next=(index+1)%eraTabs.length;else if(event.key==='ArrowLeft')next=(index-1+eraTabs.length)%eraTabs.length;else if(event.key==='Home')next=0;else if(event.key==='End')next=eraTabs.length-1;else return;event.preventDefault();eraTabs[next].focus();activateEra(eraTabs[next]);});});
+let selectedKey='motherboard';const grid=document.getElementById('partGrid'),viewer=document.getElementById('modelViewer');
+function filteredComponents(){const q=document.getElementById('componentSearch').value.trim().toLocaleLowerCase('es'),f=document.getElementById('componentFilter').value;return COMPONENTS.filter(c=>(f==='todos'||c.type===f)&&(`${c.name} ${c.description} ${c.fun}`.toLocaleLowerCase('es').includes(q)));}
+function renderParts(){const list=filteredComponents();grid.innerHTML='';list.forEach(c=>{const b=document.createElement('button');b.className='part-card';b.type='button';b.setAttribute('aria-pressed',String(c.key===selectedKey));b.innerHTML=`<span class="emoji">${c.emoji}</span><span><strong>${c.name}</strong><small>${c.type}</small></span>`;b.addEventListener('click',()=>selectPart(c.key));grid.appendChild(b);});document.getElementById('componentCount').textContent=`${list.length} de ${COMPONENTS.length} piezas`;}
+function selectPart(key){const c=COMPONENTS.find(x=>x.key===key);if(!c)return;selectedKey=key;document.getElementById('modelTitle').textContent=c.name;document.getElementById('modelType').textContent=c.type;document.getElementById('modelDescription').textContent=c.description;document.getElementById('modelFun').textContent=c.fun;document.getElementById('modelStatus').textContent='Cargando modelo 3D…';viewer.setAttribute('alt','Modelo 3D de '+c.name);viewer.src=MODELS[key];renderParts();}
+document.getElementById('componentSearch').addEventListener('input',renderParts);document.getElementById('componentFilter').addEventListener('change',renderParts);
+viewer.addEventListener('load',()=>document.getElementById('modelStatus').textContent='¡Modelo listo! Gíralo y observa sus detalles.');viewer.addEventListener('error',()=>document.getElementById('modelStatus').textContent='No se pudo interpretar el modelo. Revisa la compatibilidad del navegador.');
+document.getElementById('toggleRotate').addEventListener('click',e=>{viewer.autoRotate=!viewer.autoRotate;e.currentTarget.textContent=viewer.autoRotate?'⏸️ Pausar giro':'▶️ Activar giro';});document.getElementById('resetView').addEventListener('click',()=>{viewer.cameraOrbit='auto auto auto';viewer.fieldOfView='auto';viewer.jumpCameraToGoal();});
+
+const practice=[
+{q:'¿Qué componente ejecuta instrucciones y realiza operaciones?',a:['La CPU o procesador','El monitor','El teclado'],correct:0,why:'La CPU ejecuta instrucciones. El monitor muestra información y el teclado permite introducir datos.'},
+{q:'¿Qué hace principalmente la memoria RAM?',a:['Guarda los archivos para siempre','Mantiene temporalmente datos en uso','Imprime documentos'],correct:1,why:'La RAM ayuda a mantener a mano los datos de los programas que se están utilizando. Su contenido es temporal.'},
+{q:'¿Cuál es un dispositivo de entrada?',a:['Parlantes','Monitor','Teclado'],correct:2,why:'El teclado introduce letras, números y órdenes al computador.'},
+{q:'¿Qué componente conecta muchas piezas internas?',a:['La placa base','La impresora','El mouse'],correct:0,why:'La placa base permite conectar y comunicar muchos componentes internos.'},
+{q:'¿Cuál es un ejemplo de software?',a:['Un cable USB','Un navegador web','La memoria RAM'],correct:1,why:'Un navegador es un programa, por lo tanto es software.'},
+{q:'¿Para qué sirve una unidad de almacenamiento?',a:['Para conservar archivos y programas','Para mover el puntero','Para enfriar siempre el procesador'],correct:0,why:'El almacenamiento conserva archivos aunque apagues el computador.'},
+{q:'¿Cuál es una buena práctica de seguridad digital?',a:['Compartir la contraseña con todos','Abrir cualquier enlace','Consultar a un adulto ante algo sospechoso'],correct:2,why:'Ante mensajes o enlaces extraños, es mejor no abrirlos y pedir ayuda a un adulto de confianza.'},
+{q:'¿Qué dispositivo presenta imágenes y texto al usuario?',a:['El monitor','El micrófono','La tarjeta de red'],correct:0,why:'El monitor es un dispositivo de salida que muestra información visual.'}];
+const exam=[
+{q:'¿Qué es el hardware?',a:['Las partes físicas del computador','Los programas instalados','Una contraseña'],correct:0,why:'Hardware son los componentes físicos que forman el equipo.'},
+{q:'¿Qué función tiene la fuente de poder?',a:['Reproducir sonidos','Distribuir energía eléctrica a las piezas','Mostrar imágenes'],correct:1,why:'La fuente suministra energía a los componentes internos.'},
+{q:'¿Qué dispositivo permite escuchar música desde el computador?',a:['Micrófono','Teclado','Parlantes'],correct:2,why:'Los parlantes reproducen sonido; el micrófono captura sonido.'},
+{q:'¿Cuál de estas piezas conserva archivos al apagar el equipo?',a:['RAM','SSD o disco','CPU'],correct:1,why:'La unidad de almacenamiento conserva los archivos sin energía.'},
+{q:'¿Para qué sirve la tarjeta gráfica?',a:['Procesar gráficos e imágenes','Escribir letras','Conectar físicamente todos los componentes'],correct:0,why:'La GPU se encarga de procesar tareas gráficas.'},
+{q:'¿Cuál es un periférico de salida?',a:['Cámara web','Mouse','Impresora'],correct:2,why:'La impresora presenta la información en papel, por eso es salida.'},
+{q:'¿Qué ayuda a mantener la temperatura adecuada?',a:['Ventilador o sistema de refrigeración','Unidad de disquete','Teclado'],correct:0,why:'Los ventiladores y sistemas de refrigeración ayudan a disipar calor.'},
+{q:'¿Qué es el software?',a:['La caja del computador','Los programas e instrucciones','Un conector de audio'],correct:1,why:'El software incluye programas e instrucciones que ejecuta el equipo.'},
+{q:'¿Qué debes hacer ante un enlace sospechoso?',a:['Abrirlo inmediatamente','Compartirlo con tus amigos','No abrirlo y pedir orientación'],correct:2,why:'No abras enlaces sospechosos. Consulta a un adulto o docente de confianza.'},
+{q:'¿Cuál es la función de la placa base?',a:['Conectar y comunicar componentes','Imprimir documentos','Guardar energía para siempre'],correct:0,why:'La placa base conecta componentes internos y permite su comunicación.'}];
+function setupQuiz(prefix,questions){let index=0,score=0,answered=false;const $=id=>document.getElementById(prefix+id);function draw(){answered=false;const q=questions[index];$('Question').textContent=q.q;$('Count').textContent=`Pregunta ${index+1} de ${questions.length}`;$('Progress').style.width=`${index/questions.length*100}%`;$('Feedback').className='feedback';$('Feedback').textContent='';$('Next').disabled=true;$('Next').textContent=index===questions.length-1?'Ver resultado':'Siguiente pregunta →';$('Score').textContent=`Aciertos: ${score}`;$('Answers').innerHTML='';q.a.forEach((answer,i)=>{const b=document.createElement('button');b.className='answer';b.textContent=String.fromCharCode(65+i)+'. '+answer;b.addEventListener('click',()=>{if(answered)return;answered=true;const good=i===q.correct;b.classList.add(good?'correct':'wrong');[...$('Answers').children].forEach((el,j)=>{el.disabled=true;if(j===q.correct)el.classList.add('correct');});$('Feedback').className='feedback show '+(good?'good':'bad');$('Feedback').textContent=(good?'¡Muy bien! ':'Repasemos. ')+q.why;if(good)score++;$('Score').textContent=`Aciertos: ${score}`;$('Next').disabled=false;});$('Answers').appendChild(b);});}
+$('Next').addEventListener('click',()=>{if(!answered)return;if(index<questions.length-1){index++;draw();}else{$('Question').textContent=`Terminaste: ${score} de ${questions.length} respuestas correctas.`;$('Answers').innerHTML='';$('Feedback').className='feedback show '+(score>=questions.length*0.7?'good':'bad');$('Feedback').textContent=score>=questions.length*0.7?'¡Buen trabajo! Repasa los temas que te resultaron difíciles y vuelve a intentarlo.':'¡Sigue practicando! Vuelve a revisar los módulos y prueba otra vez.';$('Progress').style.width='100%';$('Next').textContent='Intentar de nuevo';$('Next').disabled=false;$('Next').onclick=()=>{index=0;score=0;$('Next').onclick=null;draw();};}});draw();}
+setupQuiz('practice',practice);
+setupQuiz('exam',exam);
+renderParts();selectPart('motherboard');showPage('inicio');
+</script><style>
+#btnGestos{border-color:var(--blue);color:var(--blue)}
+#btnGestos.activo{background:#ffe5e5;color:#b42318;border-color:#f1a19b}
+#gestosAyuda{margin-top:10px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--soft);font-size:.9rem}
+#gestosAyuda[hidden]{display:none}
+#gestosAyuda ul{margin:6px 0;padding-left:20px}
+#gestoActual{font-weight:800;color:var(--blue);min-height:1.4em}
+#camGestos,#camPuntos{position:absolute;bottom:10px;right:10px;width:200px;height:150px;border-radius:12px;border:2px solid var(--blue);z-index:10;transform:scaleX(-1);display:none;background:#000;object-fit:cover;box-shadow:0 4px 12px rgba(0,0,0,.25)}
+#camPuntos{z-index:11;pointer-events:none;background:transparent;box-shadow:none;border-color:transparent}
+</style>
+<script type="module">
+/* ===== Control por gestos con MediaPipe (sección Componentes) ===== */
+const $ = id => document.getElementById(id);
+const viewer = $('modelViewer');
+const stage = document.querySelector('.stage');
+const actions = document.querySelector('.sortie');
+const infoBox = document.querySelector('.model-info');
+
+if (viewer && stage && actions && infoBox) {
+  const MP_URL = 'https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3';
+  const MODEL_URL = 'https://storage.googleapis.com/mediapipe-models/gesture_recognizer/gesture_recognizer/float16/1/gesture_recognizer.task';
+
+  // --- Interfaz: botón, cámara y leyenda ---
+  const btn = document.createElement('button');
+  btn.className = 'mini-action';
+  btn.id = 'btnGestos';
+  btn.type = 'button';
+  btn.textContent = '🖐️ Activar gestos';
+  actions.appendChild(btn);
+
+  const video = document.createElement('video');
+  video.id = 'camGestos';
+  video.autoplay = true;
+  video.muted = true;
+  video.playsInline = true;
+  stage.style.position = 'relative';
+  stage.appendChild(video);
+  const lienzo = document.createElement('canvas');
+  lienzo.id = 'camPuntos';
+  lienzo.width = 400; lienzo.height = 300; lienzo.style.display = 'none';
+  stage.appendChild(lienzo);
+  const ctx = lienzo.getContext('2d');
+  const UNIONES = [[0,1],[1,2],[2,3],[3,4],[0,5],[5,6],[6,7],[7,8],[5,9],[9,10],[10,11],[11,12],[9,13],[13,14],[14,15],[15,16],[13,17],[17,18],[18,19],[19,20],[0,17]];
+  function limpiar() { ctx.clearRect(0, 0, lienzo.width, lienzo.height); }
+  function dibujar(manos) {
+    limpiar();
+    const W = lienzo.width, H = lienzo.height;
+    manos.forEach(m => {
+      ctx.lineWidth = 3; ctx.strokeStyle = '#5eead4';
+      ctx.beginPath();
+      UNIONES.forEach(([a, b]) => { ctx.moveTo(m[a].x * W, m[a].y * H); ctx.lineTo(m[b].x * W, m[b].y * H); });
+      ctx.stroke();
+      m.forEach((pt, i) => {
+        ctx.beginPath();
+        ctx.arc(pt.x * W, pt.y * H, i === 0 || i === 9 ? 6 : 4, 0, Math.PI * 2);
+        ctx.fillStyle = i === 9 ? '#fbbf24' : '#ef4444';
+        ctx.fill();
+      });
+    });
+  }
+
+  const ayuda = document.createElement('div');
+  ayuda.id = 'gestosAyuda';
+  ayuda.hidden = true;
+  ayuda.innerHTML =
+    '<strong>Gestos activos</strong><ul>' +
+    '<li>🙌 <b>Dos manos:</b> sepáralas para acercar, júntalas para alejar</li>' +
+    '<li>🖐️ <b>Mano abierta:</b> mover el objeto</li>' +
+    '<li>✊ <b>Mano cerrada:</b> girar el modelo</li>' +
+    '<li>✌️ <b>Paz:</b> siguiente pieza</li></ul>' +
+    '<div id="gestoActual" aria-live="polite">Muestra tu mano a la cámara…</div>';
+  actions.after(ayuda);
+  const gestoActual = $('gestoActual');
+
+  // --- Aviso emergente ---
+  let toastTimer;
+  function aviso(msg) {
+    const t = $('toast');
+    if (!t) return;
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.remove('show'), 2200);
+  }
+
+  // --- Estado ---
+  let recognizer = null, loading = false, running = false, stream = null;
+  let lastVideoTime = -1, prevPos = null, prevDist = null, prevGesture = '';
+  let victoryFrames = 0, victoryLock = false, autoRotateBefore = false;
+  let homeTarget = null, homeRadius = null;
+  const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+  const NOMBRES = { Closed_Fist: '✊ Girando', Open_Palm: '🖐️ Moviendo', Victory: '✌️ Siguiente pieza' };
+
+  async function cargarIA() {
+    if (recognizer) return true;
+    if (loading) return false;
+    loading = true;
+    btn.textContent = '⏳ Cargando IA…';
+    try {
+      const { GestureRecognizer, FilesetResolver } = await import(MP_URL);
+      const vision = await FilesetResolver.forVisionTasks(MP_URL + '/wasm');
+      const base = { modelAssetPath: MODEL_URL };
+      try {
+        recognizer = await GestureRecognizer.createFromOptions(vision, { baseOptions: { ...base, delegate: 'GPU' }, runningMode: 'VIDEO', numHands: 2 });
+      } catch (e) {
+        recognizer = await GestureRecognizer.createFromOptions(vision, { baseOptions: base, runningMode: 'VIDEO', numHands: 2 });
+      }
+      return true;
+    } catch (err) {
+      console.error('Error al cargar MediaPipe:', err);
+      aviso('No se pudo cargar la IA de gestos. Revisa tu conexión a internet.');
+      return false;
+    } finally {
+      loading = false;
+      btn.textContent = running ? '🛑 Detener gestos' : '🖐️ Activar gestos';
+    }
+  }
+
+  async function iniciar() {
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+      aviso('Este navegador no permite usar la cámara aquí.');
+      return;
+    }
+    if (!(await cargarIA())) return;
+    try {
+      stream = await navigator.mediaDevices.getUserMedia({ video: { width: 640, height: 480 } });
+    } catch (err) {
+      aviso('Necesitas permitir el acceso a la cámara para usar los gestos.');
+      return;
+    }
+    video.srcObject = stream;
+    await video.play().catch(() => {});
+    video.style.display = 'block';
+    lienzo.style.display = 'block';
+    running = true;
+    lastVideoTime = -1;
+    prevPos = prevDist = null; prevGesture = '';
+    autoRotateBefore = !!viewer.autoRotate;
+    viewer.autoRotate = false;
+    btn.textContent = '🛑 Detener gestos';
+    btn.classList.add('activo');
+    ayuda.hidden = false;
+    guardarVistaInicial();
+    requestAnimationFrame(bucle);
+  }
+
+  function detener() {
+    running = false;
+    if (stream) stream.getTracks().forEach(t => t.stop());
+    stream = null;
+    video.srcObject = null;
+    video.style.display = 'none';
+    lienzo.style.display = 'none';
+    limpiar();
+    btn.textContent = '🖐️ Activar gestos';
+    btn.classList.remove('activo');
+    ayuda.hidden = true;
+    viewer.autoRotate = autoRotateBefore;
+    const rot = $('toggleRotate');
+    if (rot) rot.textContent = viewer.autoRotate ? '⏸️ Pausar giro' : '▶️ Activar giro';
+  }
+
+  btn.addEventListener('click', () => (running ? detener() : iniciar()));
+
+  // --- Realidad aumentada (RA) ---
+  viewer.setAttribute('ar', '');
+  viewer.setAttribute('ar-modes', 'webxr scene-viewer quick-look');
+  viewer.setAttribute('ar-scale', 'auto');
+  viewer.setAttribute('ar-placement', 'floor');
+
+  const btnRA = document.createElement('button');
+  btnRA.className = 'mini-action';
+  btnRA.id = 'btnRA';
+  btnRA.type = 'button';
+  btnRA.textContent = '📱 Ver en RA';
+  actions.appendChild(btnRA);
+
+  btnRA.addEventListener('click', async () => {
+    if (location.protocol === 'file:') {
+      aviso('Para usar RA, la página debe estar publicada en internet (https), no abierta como archivo.');
+      return;
+    }
+    if (!viewer.loaded) { aviso('Espera a que el modelo termine de cargar.'); return; }
+    if (!viewer.canActivateAR) {
+      aviso('Tu dispositivo no admite RA aquí. Prueba en un celular: Chrome (Android) o Safari (iPhone).');
+      return;
+    }
+    if (running) detener(); // liberar la cámara para la sesión de RA
+    try { await viewer.activateAR(); }
+    catch (e) { aviso('No se pudo iniciar la RA en este dispositivo.'); }
+  });
+
+  // Vista "casa" para limitar cuánto se puede desplazar el modelo
+  function guardarVistaInicial() {
+    setTimeout(() => {
+      try {
+        homeTarget = viewer.getCameraTarget();
+        homeRadius = viewer.getCameraOrbit().radius;
+      } catch (e) {}
+    }, 250);
+  }
+  viewer.addEventListener('load', () => {
+    if (!running) return;
+    viewer.cameraTarget = 'auto auto auto';
+    viewer.cameraOrbit = 'auto auto auto';
+    viewer.jumpCameraToGoal();
+    guardarVistaInicial();
+  });
+  const reset = $('resetView');
+  if (reset) reset.addEventListener('click', () => {
+    viewer.cameraTarget = 'auto auto auto';
+    viewer.jumpCameraToGoal();
+    guardarVistaInicial();
+  });
+
+  // --- Bucle principal ---
+  function bucle() {
+    if (!running) return;
+    const pagina = $('page-componentes');
+    if (pagina && !pagina.classList.contains('active')) { detener(); return; }
+    if (video.readyState >= 2 && video.currentTime !== lastVideoTime) {
+      lastVideoTime = video.currentTime;
+      try {
+        procesar(recognizer.recognizeForVideo(video, performance.now()));
+      } catch (e) { console.error(e); }
+    }
+    requestAnimationFrame(bucle);
+  }
+
+  function procesar(res) {
+    const manos = res.landmarks ? res.landmarks.length : 0;
+    dibujar(res.landmarks || []);
+
+    // DOS MANOS → ZOOM
+    if (manos >= 2) {
+      const a = res.landmarks[0][0], b = res.landmarks[1][0];
+      const dist = Math.hypot(a.x - b.x, a.y - b.y);
+      if (prevDist !== null) {
+        const delta = dist - prevDist;
+        if (Math.abs(delta) > 0.002) {
+          const o = viewer.getCameraOrbit();
+          o.radius *= clamp(1 - delta * 3.5, 0.85, 1.15); // separar manos = acercar
+          viewer.cameraOrbit = `${o.theta}rad ${o.phi}rad ${o.radius}m`;
+          viewer.jumpCameraToGoal();
+        }
+      }
+      prevDist = dist; prevPos = null; prevGesture = ''; victoryFrames = 0;
+      gestoActual.textContent = '🙌 Zoom con dos manos';
+      return;
+    }
+    prevDist = null;
+
+    if (manos === 0) {
+      prevPos = null; prevGesture = ''; victoryFrames = 0; victoryLock = false;
+      gestoActual.textContent = 'Muestra tu mano a la cámara…';
+      return;
+    }
+
+    // UNA MANO
+    const g = res.gestures[0] && res.gestures[0][0];
+    const nombre = g && g.score > 0.5 ? g.categoryName : '';
+    const p = res.landmarks[0][9]; // nudillo del dedo medio = centro de la mano
+    const pos = prevPos ? { x: prevPos.x + (p.x - prevPos.x) * 0.5, y: prevPos.y + (p.y - prevPos.y) * 0.5 } : { x: p.x, y: p.y };
+    gestoActual.textContent = NOMBRES[nombre] || '…';
+
+    // ✌️ SIGUIENTE PIEZA (mantener ~6 cuadros para evitar falsos positivos)
+    if (nombre === 'Victory') {
+      victoryFrames++;
+      if (victoryFrames >= 6 && !victoryLock) {
+        victoryLock = true;
+        siguientePieza();
+        setTimeout(() => { victoryLock = false; }, 1800);
+      }
+    } else victoryFrames = 0;
+
+    // Si cambió el gesto, no calcular movimiento este cuadro (evita saltos)
+    if (nombre !== prevGesture || !prevPos) { prevGesture = nombre; prevPos = pos; return; }
+
+    const dx = pos.x - prevPos.x, dy = pos.y - prevPos.y;
+    prevPos = pos;
+    if (Math.abs(dx) < 0.0015 && Math.abs(dy) < 0.0015) return;
+
+    if (nombre === 'Closed_Fist') {
+      // ✊ GIRAR (la cámara está en espejo: mover la mano a tu derecha gira el modelo a la derecha)
+      const o = viewer.getCameraOrbit();
+      const theta = o.theta + dx * 5;
+      const phi = clamp(o.phi - dy * 5, 0.15, Math.PI - 0.15);
+      viewer.cameraOrbit = `${theta}rad ${phi}rad ${o.radius}m`;
+      viewer.jumpCameraToGoal();
+    } else if (nombre === 'Open_Palm') {
+      // 🖐️ MOVER (desplaza el punto de mira en el plano de la pantalla)
+      const o = viewer.getCameraOrbit();
+      const t = viewer.getCameraTarget();
+      const k = o.radius * 1.2;
+      const sT = Math.sin(o.theta), cT = Math.cos(o.theta), sP = Math.sin(o.phi), cP = Math.cos(o.phi);
+      const right = { x: cT, y: 0, z: -sT };
+      const up = { x: -sT * cP, y: sP, z: -cT * cP };
+      let nx = t.x + (dx * right.x + dy * up.x) * k;
+      let ny = t.y + (dx * right.y + dy * up.y) * k;
+      let nz = t.z + (dx * right.z + dy * up.z) * k;
+      if (homeTarget && homeRadius) { // que el modelo no se pierda de pantalla
+        const lim = homeRadius;
+        nx = clamp(nx, homeTarget.x - lim, homeTarget.x + lim);
+        ny = clamp(ny, homeTarget.y - lim, homeTarget.y + lim);
+        nz = clamp(nz, homeTarget.z - lim, homeTarget.z + lim);
+      }
+      viewer.cameraTarget = `${nx}m ${ny}m ${nz}m`;
+      viewer.jumpCameraToGoal();
+    }
+  }
+
+  function siguientePieza() {
+    const tarjetas = Array.from(document.querySelectorAll('#partGrid .part-card'));
+    if (!tarjetas.length) return;
+    const actual = tarjetas.findIndex(c => c.getAttribute('aria-pressed') === 'true');
+    const sig = tarjetas[(actual + 1) % tarjetas.length];
+    sig.click();
+    const cont = sig.parentElement; // mantener visible la tarjeta sin mover toda la página
+    if (cont) {
+      const cr = cont.getBoundingClientRect(), sr = sig.getBoundingClientRect();
+      cont.scrollTop += sr.top - cr.top - (cont.clientHeight - sr.height) / 2;
+    }
+    const titulo = $('modelTitle');
+    aviso('Siguiente pieza ✌️ ' + (titulo ? titulo.textContent : ''));
+  }
+}
+</script>
+
+</body></html>
+
